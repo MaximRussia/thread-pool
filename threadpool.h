@@ -21,13 +21,13 @@ public:
     void ShutDown();
 
 private:
-	vector<thread> threadPool;
+    vector<thread> threadPool;
     queue<function<void()>> tasks;
     mutex tasksMutex;
     condition_variable condition;
     std::atomic_bool terminate;
-	std::atomic_bool stopped;
-	void Runner();
+    std::atomic_bool stopped;
+    void Runner();
 };
 
 #endif // THREADPOOL_H
