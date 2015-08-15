@@ -47,9 +47,9 @@ void ThreadPool::Runner() {
 		{
 			task();
 		}
-		catch (...)
+		catch (exception &ex)
 		{
-			throw;
+			cout << "at " << std::thread::id() << " " << ex.what() << endl;
 		}
 	}
 }
