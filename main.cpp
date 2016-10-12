@@ -23,13 +23,11 @@ int main() {
 			std::shuffle(data.begin(), data.end(), engine);
 			std::sort(data.begin(), data.end());
 
-			if (rand() % 2) { cout << "booom!" << endl; int a[5]; a[6] = 0; }
+			if (rand() % 2) { throw runtime_error("booom!"); }
 
 			cout << "Finish Processed: " << i << endl;
 		});
 	}
-
-	cin.get();
 
 	return 0;
 }

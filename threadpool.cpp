@@ -47,9 +47,9 @@ void ThreadPool::Runner() {
 		{
 			task();
 		}
-		catch (exception &ex)
+		catch (runtime_error &ex)
 		{
-			cout << "at " << std::thread::id() << " " << ex.what() << endl;
+			cout << "at " << std::this_thread::get_id() << " " << ex.what() << endl;
 		}
 	}
 }
